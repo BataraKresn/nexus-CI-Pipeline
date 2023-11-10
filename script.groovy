@@ -24,10 +24,10 @@ def deployApp(){
 }
 
 def commitChanges(){
-        withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'PSW', usernameVariable: 'USER')]) {
+        withCredentials([credentialsId: 'github-']) {
         sh 'git config --global user.name "BataraKresn"'
         sh 'git config --global user.email "adimaspangestu02@gmail.com"'
-        sh "git remote set-url origin https://${USER}:${PSW}@github.com/BataraKresn/nexus-CI-Pipeline.git" 
+        sh "git remote set-url origin https://${github-}}@github.com/BataraKresn/nexus-CI-Pipeline.git" 
         /*  sh "git remote set-url origin git@git@github.com:BataraKresn/go-example.git  */
 
         sh '''
